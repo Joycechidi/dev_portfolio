@@ -27,10 +27,13 @@ class HeaderBody extends StatelessWidget {
         ),
         AutoSizeText(
           'Joyce\nChidiadi',
-          style: Theme.of(context).textTheme.headline2,
+          style: GoogleFonts.montserrat(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+            fontSize: 60,
+          ),
+          maxLines: 2,
         ),
-        // maxLines: 2,
-        // ),
         SizedBox(
           height: isMobile ?? false ? 20 : 37,
         ),
@@ -43,7 +46,7 @@ class HeaderBody extends StatelessWidget {
           maxLines: 3,
         ),
         SizedBox(
-          height: isMobile ?? false ? 20 : 40,
+          height: isMobile ?? false ? 20 : 40
         ),
         // AutoSizeText(
         //   'My interests:\nShuffling data for business insights.\nBuilding software products that solve human and business problems.\nSafeguarding customers data using secure and private AI tools.',
@@ -70,7 +73,9 @@ class HeaderBody extends StatelessWidget {
         //   ),
         // ),
 
-        SizedBox(width: kDefaultPadding * 3.0),
+        SizedBox(
+          height: isMobile ?? false ? 20 : 40
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

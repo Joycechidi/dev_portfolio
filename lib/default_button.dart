@@ -17,7 +17,7 @@ class DefaultButton extends StatelessWidget {
     return FlatButton(
       padding: EdgeInsets.symmetric(
         vertical: kDefaultPadding,
-        horizontal: kDefaultPadding * 1.0,
+        horizontal: kDefaultPadding * 0.5,
       ),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       color: Color(0xFF54C5CC),
@@ -26,7 +26,7 @@ class DefaultButton extends StatelessWidget {
         // mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Image.asset(imageSrc, height: 60),
-          SizedBox(width: kDefaultPadding),
+          SizedBox(width: kDefaultPadding *0.5),
           Text(text),
         ],
       ),
