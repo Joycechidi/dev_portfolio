@@ -1,54 +1,73 @@
+import 'package:dev_portfolio/components/mobile_desktop_view_builder.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 class NavigationBarView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveBuilder(
-      builder: (context, size) {
-        if (size.isMobile) {
-          return Container(
-            height: 50,
-            width: double.infinity,
-            child: Row(
-              children: [
-                SizedBox(width: 20),
-                Image.asset(
-                  'images/logo.png',
-                  height: 80,
-                ),
-                Spacer(),
-                IconButton(
-                  icon: Icon(Icons.menu),
-                  onPressed: () => Scaffold.of(context).openEndDrawer(),
-                )
-              ],
-            ),
-          );
-        }
-        final onPressed = () => print('Click');
-        // final text = 'About Me';
-        return Container(
-          height: 100,
-          width: 1507,
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Row(
-            children: [
-              Image.asset(
-                'images/nav_logo.png',
-                height: 600,
-              ),
-              Spacer(),
-              for (var item in kNavigationItems)
-                NavigationBarItem(
-                  onPressed: onPressed,
-                  text: item.text,
-                ),
-            ],
+    final onPressed = () => print('Click');
+    return MobileDesktopViewBuilder(
+        mobileView: NavigationMobileView(),
+        desktopView: NavigationDesktopView(onPressed: onPressed));
+  }
+}
+
+class NavigationDesktopView extends StatelessWidget {
+  const NavigationDesktopView({
+    Key key,
+    @required this.onPressed,
+  }) : super(key: key);
+
+  final void Function() onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 100,
+      width: 1507,
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Row(
+        children: [
+          Image.asset(
+            'images/nav_logo.png',
+            height: 600,
           ),
-          // color: Colors.deepPurple,
-        );
-      },
+          Spacer(),
+          for (var item in kNavigationItems)
+            NavigationBarItem(
+              onPressed: onPressed,
+              text: item.text,
+            ),
+        ],
+      ),
+      // color: Colors.deepPurple,
+    );
+  }
+}
+
+class NavigationMobileView extends StatelessWidget {
+  const NavigationMobileView({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50,
+      width: double.infinity,
+      child: Row(
+        children: [
+          SizedBox(width: 20),
+          Image.asset(
+            'images/logo.png',
+            height: 80,
+          ),
+          Spacer(),
+          IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () => Scaffold.of(context).openEndDrawer(),
+          )
+        ],
+      ),
     );
   }
 }

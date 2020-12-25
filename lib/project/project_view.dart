@@ -1,3 +1,4 @@
+import 'package:dev_portfolio/components/mobile_desktop_view_builder.dart';
 import 'package:dev_portfolio/project/project_item_body.dart';
 import 'package:dev_portfolio/project/project_mobile_view.dart';
 import 'package:flutter/foundation.dart';
@@ -78,11 +79,10 @@ final kProjectItems = [
 class ProjectView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveBuilder(
-      builder: (_, size) {
-        if (size.isMobile) return ProjectMobileView();
-        return ProjectDesktopView();
-      },
+
+    return MobileDesktopViewBuilder(
+      mobileView: ProjectMobileView(),
+      desktopView: ProjectDesktopView(),
     );
   }
 }
@@ -91,7 +91,7 @@ class ProjectDesktopView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding:kScreenPadding,
+      padding: kScreenPadding,
       // padding: const EdgeInsets.symmetric(horizontal: 20),
       // height: 864,
       width: kInitWidth,
@@ -102,7 +102,6 @@ class ProjectDesktopView extends StatelessWidget {
           Text('Projects', style: Theme.of(context).textTheme.headline2),
           SizedBox(height: 20),
           SizedBox(height: 20),
-
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

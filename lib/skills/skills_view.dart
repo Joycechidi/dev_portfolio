@@ -1,16 +1,16 @@
+import 'package:dev_portfolio/components/mobile_desktop_view_builder.dart';
 import 'package:dev_portfolio/constants.dart';
 import 'package:dev_portfolio/skills/outline_skills_container.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 class SkillsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveBuilder(
-      builder: (_, size) {
-        if (size.isMobile) return SkillsMobileView();
-        return SkillsDesktopView();
-      },
+    final width = MediaQuery.of(context).size.width;
+    return MobileDesktopViewBuilder(
+      mobileView: SkillsMobileView(),
+      desktopView: SkillsDesktopView(),
+      showMobile: width < 789,
     );
   }
 }
@@ -57,7 +57,6 @@ class SkillsDesktopView extends StatelessWidget {
     );
   }
 }
-
 
 class SkillsMobileView extends StatelessWidget {
   const SkillsMobileView({
