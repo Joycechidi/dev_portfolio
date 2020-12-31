@@ -1,4 +1,6 @@
+import 'package:dev_portfolio/blog/blog_view.dart';
 import 'package:dev_portfolio/drawer/drawer_view.dart';
+import 'package:dev_portfolio/experience/experience_view.dart';
 import 'package:dev_portfolio/header/header_view.dart';
 import 'package:dev_portfolio/navigation_bar/nav_bar_view.dart';
 import 'package:dev_portfolio/project/project_view.dart';
@@ -56,7 +58,7 @@ class PortfolioView extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     final ScrollController scrollController = ScrollController(
-      initialScrollOffset: 1750,
+      initialScrollOffset: 2500,
     );
     return Scaffold(
       endDrawer: DrawerView(),
@@ -69,12 +71,14 @@ class PortfolioView extends StatelessWidget {
               height: 50,
             ),
             HeaderView(),
-            ProjectView(),
             SkillsView(),
+            ProjectView(),         
+            ExperenceView(),
+            BlogView(),
             Container(
               height: height,
               width: width,
-              color: Colors.white,
+              color: Colors.purple,
             ),
           ],
         ),
@@ -82,4 +86,3 @@ class PortfolioView extends StatelessWidget {
     );
   }
 }
-

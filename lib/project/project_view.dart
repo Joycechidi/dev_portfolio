@@ -1,11 +1,8 @@
+import 'package:dev_portfolio/components/desktop_view_builder.dart';
 import 'package:dev_portfolio/components/mobile_desktop_view_builder.dart';
+import 'package:dev_portfolio/components/mobile_view_builder.dart';
 import 'package:dev_portfolio/project/project_item_body.dart';
-import 'package:dev_portfolio/project/project_mobile_view.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
-
-import 'package:dev_portfolio/constants.dart';
 
 class ProjectItem {
   final String image;
@@ -27,14 +24,20 @@ final kProjectItems = [
     title: "BMI Calculator",
     description:
         "BMI Calculator is a tool made to help you calculate your body mass index is. This index helps you know if your weight is normal, obese or overweight.",
-    technologies: ['Flutter ', 'Dart '],
+    technologies: [
+      'Flutter ',
+      'Dart ',
+    ],
   ),
   ProjectItem(
     image: 'images/know_canada.png',
     title: "Know_Canada",
     description:
         "Know Canada is a quiz app that helps people to prepare for Canadian Citizenship Test and for Canadians to have fun testing how much they know about Canada based on Discover Canada content.",
-    technologies: ['Flutter ', 'Dart '],
+    technologies: [
+      'Flutter ',
+      'Dart ',
+    ],
   ),
   // ProjectItem(
   //   image: 'images/recom_sys.png',
@@ -77,9 +80,9 @@ final kProjectItems = [
 ];
 
 class ProjectView extends StatelessWidget {
+  static const title = 'Projects';
   @override
   Widget build(BuildContext context) {
-
     return MobileDesktopViewBuilder(
       mobileView: ProjectMobileView(),
       desktopView: ProjectDesktopView(),
@@ -90,33 +93,36 @@ class ProjectView extends StatelessWidget {
 class ProjectDesktopView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: kScreenPadding,
-      // padding: const EdgeInsets.symmetric(horizontal: 20),
-      // height: 864,
-      width: kInitWidth,
-      color: Colors.teal[50],
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text('Projects', style: Theme.of(context).textTheme.headline2),
-          SizedBox(height: 20),
-          SizedBox(height: 20),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              for (final item in kProjectItems)
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ProjectItemBody(item: item),
-                  ),
-                )
-            ],
-          ),
-          SizedBox(height: 70),
-        ],
-      ),
+    return DesktopViewBuilder(
+      titleText: ProjectView.title,
+      children: [
+        SizedBox(height: 20),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            for (final item in kProjectItems)
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ProjectItemBody(item: item),
+                ),
+              )
+          ],
+        ),
+        SizedBox(height: 50),
+      ],
     );
   }
 }
+
+class ProjectMobileView extends StatelessWidget {
+  static const title = 'Projects';
+  @override
+  Widget build(BuildContext context) {
+    return MobileViewBuilder(
+      titleText: ProjectView.title,
+      children: [for (final item in kProjectItems) ProjectItemBody(item: item)],
+    );
+  }
+}
+

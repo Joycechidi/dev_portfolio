@@ -31,10 +31,12 @@ class ProjectItemBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             for (final tech in item.technologies)
-              Padding(
-                padding: const EdgeInsets.only(right: 10.0),
-                child: Chip(
-                  label: Text(tech),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: Chip(
+                    label: Text(tech),
+                  ),
                 ),
               ),
           ],

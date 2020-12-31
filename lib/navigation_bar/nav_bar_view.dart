@@ -28,7 +28,7 @@ class NavigationDesktopView extends StatelessWidget {
       child: Row(
         children: [
           Image.asset(
-            'images/nav_logo.png',
+            'images/logo.png',
             height: 600,
           ),
           Spacer(),
@@ -59,7 +59,7 @@ class NavigationMobileView extends StatelessWidget {
           SizedBox(width: 20),
           Image.asset(
             'images/logo.png',
-            height: 80,
+            height: 100,
           ),
           Spacer(),
           IconButton(
@@ -79,10 +79,11 @@ class NavigationItem {
 }
 
 final kNavigationItems = [
-  NavigationItem('About Me'),
-  NavigationItem('Skills'),
-  NavigationItem('Projects'),
-  NavigationItem('Writings'),
+  NavigationItem('About Me '),
+  NavigationItem('Skills '),
+  NavigationItem('Projects '),
+  NavigationItem('Experience '),
+  NavigationItem('Writings '),
 ];
 
 class NavigationBarItem extends StatelessWidget {

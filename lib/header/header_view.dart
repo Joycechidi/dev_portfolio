@@ -31,6 +31,7 @@ class HeaderDesktopView extends StatelessWidget {
     return Container(
       height: 864,
       width: kInitWidth,
+      color: Color(0xFF180723),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Row(
