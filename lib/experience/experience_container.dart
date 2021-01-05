@@ -1,49 +1,53 @@
-import 'package:dev_portfolio/experience/experience_view.dart';
-import 'package:dev_portfolio/skills/skills_view.dart';
+import 'package:dev_portfolio/utils/colour_assets.dart';
 import 'package:flutter/material.dart';
 
 class ExperienceContainer extends StatelessWidget {
   const ExperienceContainer({
     Key key,
     @required this.experience,
+    @required this.index,
   }) : super(key: key);
 
   final ExperienceInfo experience;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
+    final colors = ColorAssets.all;
     return Container(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         border: Border.all(
-          width: 3, color: ColorAssets.blue,
-          // color: colors.elementAt(index % colors.length),
+          width: 3,
+          color: colors.elementAt(index % colors.length),
         ),
-        borderRadius: BorderRadius.circular(18),
+        borderRadius: BorderRadius.circular(3),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             experience.company,
-            style: _textStyle(isBold: true),
+            style: textStyle(isBold: true),
           ),
+          SizedBox(height: 10),
           Text(
             experience.timeline,
-            style: _textStyle(),
+            style: textStyle(isGrey: true),
           ),
+          SizedBox(height: 10),
           for (final item in experience.descriptions)
             Text(
               item,
-              style: _textStyle(),
-            ),
+              style: textStyle(),
+            )
         ],
       ),
     );
   }
 }
 
-TextStyle _textStyle({bool isBold, bool isGrey}) {
+TextStyle textStyle({bool isBold, bool isGrey}) {
   return TextStyle(
     fontSize: 20,
     fontWeight: isBold ?? false ? FontWeight.bold : FontWeight.normal,
@@ -51,7 +55,6 @@ TextStyle _textStyle({bool isBold, bool isGrey}) {
     color: isGrey ?? false ? Colors.grey : Colors.black,
   );
 }
-
 
 class ExperienceInfo {
   final String company;
@@ -86,6 +89,15 @@ final experiences = [
       '- Built a text classification model to identify brand and product name for a client ',
     ],
   ),
+  ExperienceInfo(
+    company: 'Software Developer (Tools&Automation) @ Stream Systems, Calgary',
+    timeline: "March-May 2017 ",
+    descriptions: [
+      '- Developed simple software automation tools used by developers and software testers for application development ',
+      '- Worked with Selenium and Jenkins for software verification ',
+    ],
+  ),
+
   ExperienceInfo(
     company: 'Software Developer (Tools&Automation) @ Stream Systems, Calgary',
     timeline: "March-May 2017 ",

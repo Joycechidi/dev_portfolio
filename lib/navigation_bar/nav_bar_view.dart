@@ -83,7 +83,7 @@ final kNavigationItems = [
   NavigationItem('Skills '),
   NavigationItem('Projects '),
   NavigationItem('Experience '),
-  NavigationItem('Writings '),
+  NavigationItem('Blog '),
 ];
 
 class NavigationBarItem extends StatelessWidget {

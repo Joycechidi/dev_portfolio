@@ -5,7 +5,6 @@ import 'package:dev_portfolio/header/header_view.dart';
 import 'package:dev_portfolio/navigation_bar/nav_bar_view.dart';
 import 'package:dev_portfolio/project/project_view.dart';
 import 'package:dev_portfolio/skills/skills_view.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -67,19 +66,15 @@ class PortfolioView extends StatelessWidget {
         child: Column(
           children: [
             NavigationBarView(),
-            SizedBox(
-              height: 50,
-            ),
+            // SizedBox(
+            //   height: 50,
+            // ),
             HeaderView(),
             SkillsView(),
-            ProjectView(),         
-            ExperenceView(),
+            ProjectView(),
+            ExperienceView(),
             BlogView(),
-            Container(
-              height: height,
-              width: width,
-              color: Colors.purple,
-            ),
+            Container(height: height, width: width, color: Colors.purple),
           ],
         ),
       ),

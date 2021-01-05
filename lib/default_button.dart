@@ -6,7 +6,7 @@ class DefaultButton extends StatelessWidget {
     Key key,
     this.imageSrc,
     this.text,
-    this.press,
+    this.press, Future<bool> Function() onPressed,
   }) : super(key: key);
 
   final String imageSrc, text;

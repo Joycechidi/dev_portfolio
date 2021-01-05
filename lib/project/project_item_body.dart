@@ -34,8 +34,10 @@ class ProjectItemBody extends StatelessWidget {
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.only(right: 8.0),
-                  child: Chip(
-                    label: Text(tech),
+                  child: Expanded(
+                    child: Chip(
+                      label: Text(tech),
+                    ),
                   ),
                 ),
               ),

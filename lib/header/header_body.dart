@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dev_portfolio/default_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HeaderBody extends StatelessWidget {
   final bool isMobile;
@@ -44,9 +45,7 @@ class HeaderBody extends StatelessWidget {
           ),
           maxLines: 3,
         ),
-        SizedBox(
-          height: isMobile ?? false ? 20 : 40
-        ),
+        SizedBox(height: isMobile ?? false ? 20 : 40),
         // AutoSizeText(
         //   'My interests:\nShuffling data for business insights.\nBuilding software products that solve human and business problems.\nSafeguarding customers data using secure and private AI tools.',
         //   style: TextStyle(fontSize: 16),
@@ -72,16 +71,15 @@ class HeaderBody extends StatelessWidget {
         //   ),
         // ),
 
-        SizedBox(
-          height: isMobile ?? false ? 20 : 40
-        ),
+        SizedBox(height: isMobile ?? false ? 20 : 40),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             DefaultButton(
               imageSrc: "images/contact.png",
-              text: "Contact Me",
+              text: "Contact Me ",
               press: () {},
+              onPressed: () => launch('mailto:<email address>?subject=<subject>&body=<body>'),
             ),
           ],
         ),

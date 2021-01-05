@@ -29,7 +29,12 @@ dependencies:
   responsive_builder: ^0.3.0
   velocity_x: ^0.3.4
   flutter_icons: ^1.1.0
-  url_launcher: ^5.4.7
+  url_launcher: ^5.7.10
+  after_layout: ^1.0.7+2
+  webfeed: ^0.6.0
+  provider: ^4.3.2+3
+  intl: ^0.16.1
+  font_awesome_flutter: ^8.8.1
 
 
 dev_dependencies:
