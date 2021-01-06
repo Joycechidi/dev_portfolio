@@ -19,7 +19,7 @@ class BlogCard extends StatelessWidget {
 
   String convertDate(String dateText) {
     final date = DateFormat('EEE, dd MMM yyyy HH:mm:ss zzz').parse(dateText);
-    return DateFormat('d MMMM yyyy').format(date);
+    return DateFormat('dd MMMM yyyy').format(date);
   }
 
   String removeAllHtmlTags(String htmlText) {
