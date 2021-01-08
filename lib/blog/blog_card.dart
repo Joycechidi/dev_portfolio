@@ -18,10 +18,17 @@ class BlogCard extends StatelessWidget {
   final RssItem article;
 
   String convertDate(String dateText) {
-    final date = DateFormat('EEE, dd MMM yyyy HH:mm:ss zzz').parse(dateText);
-    return DateFormat('dd MMMM yyyy').format(date);
+    final date = DateFormat('MMM dd yyyy HH:mm:ss zzz').parse(dateText);
+    return DateFormat('MMMM d yyyy').format(date);
   }
 
+// void main() {
+//   final date = 'Mon, 11 Aug 2014 12:53 pm PDT';
+//   DateFormat format = new DateFormat("EEE, dd MMM yyyy hh:mm a zzz");
+//   date = date.replaceFirst(' pm', ' PM').replaceFirst(' am', ' AM');
+//   print(date);
+//   print(format.parse(date));
+// }
   String removeAllHtmlTags(String htmlText) {
     RegExp exp = RegExp(r"<[^>]*>", multiLine: true, caseSensitive: true);
 
@@ -62,10 +69,10 @@ class BlogCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    convertDate(article.author), //check to add date later
-                    style: textStyle(isGrey: true),
-                  ),
+                  // Text(
+                  //   convertDate(article.pubDate), //check to add date later
+                  //   style: textStyle(isGrey: true),
+                  // ),
                   SizedBox(height: 15),
                   Text(
                     removeAllHtmlTags(article.content.value),

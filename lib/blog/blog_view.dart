@@ -70,37 +70,35 @@ class BlogMobileView extends StatelessWidget {
   }
 }
 
-// Future<List<RssItem>> getArticles() async {
-//   final url =
-//       'https://cors-anywhere.herokuapp.com/https://medium.com/feed/@muhamad_haris';
-
-//   final response = await http.get(url);
-//   final parsedResponse = RssFeed.parse(response.body);
-//   final haveFlutterTag = (RssItem article) {
-//     return article.categories.any((category) => category.value == 'flutter');
-//   };
-//   final flutterArticles =
-//       parsedResponse.items.where(haveFlutterTag).take(2).toList();
-
-//   return flutterArticles;
-// }
-
-
 Future<List<RssItem>> getArticles() async {
   final url =
-      'https://cors-anywhere.herokuapp.com/https://medium.com/feed/@jcchidiadi';
+      'https://cors-anywhere.herokuapp.com/https://medium.com/feed/@muhamad_haris';
 
   final response = await http.get(url);
   final parsedResponse = RssFeed.parse(response.body);
-  final havePythonTag = (RssItem article) {
-    return article.categories.any((category) => category.value == 'python');
+  final haveFlutterTag = (RssItem article) {
+    return article.categories.any((category) => category.value == 'flutter');
   };
-  final pythonArticles =
-      parsedResponse.items.where(havePythonTag).take(1).toList();
+  final flutterArticles =
+      parsedResponse.items.where(haveFlutterTag).take(2).toList();
 
-  return pythonArticles;
+  return flutterArticles;
 }
 
+// Future<List<RssItem>> getArticles() async {
+//   final url =
+//       'https://cors-anywhere.herokuapp.com/https://medium.com/feed/@jcchidiadi';
+
+//   final response = await http.get(url);
+//   final parsedResponse = RssFeed.parse(response.body);
+//   final havePythonTag = (RssItem article) {
+//     return article.categories.any((category) => category.value == 'python');
+//   };
+//   final pythonArticles =
+//       parsedResponse.items.where(havePythonTag).take(2).toList();
+
+//   return pythonArticles;
+// }
 
 // class Blog {
 //   final String topic, blogs, blogPic;

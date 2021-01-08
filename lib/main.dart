@@ -73,7 +73,7 @@ class PortfolioView extends StatelessWidget {
             SkillsView(),
             ProjectView(),
             ExperienceView(),
-            // BlogView(),
+            BlogView(),
             Container(height: height, width: width, color: Colors.purple),
           ],
         ),

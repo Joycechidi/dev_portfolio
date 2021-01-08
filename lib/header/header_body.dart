@@ -3,6 +3,7 @@ import 'package:dev_portfolio/default_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:dev_portfolio/utils/hover_extensions.dart';
 
 class HeaderBody extends StatelessWidget {
   final bool isMobile;
@@ -79,8 +80,9 @@ class HeaderBody extends StatelessWidget {
               imageSrc: "images/contact.png",
               text: "Contact Me ",
               press: () {},
-              onPressed: () => launch('mailto:<email address>?subject=<subject>&body=<body>'),
-            ),
+              onPressed: () => launch(
+                  'mailto:smith@example.org?subject=News&body=New%20plugin'),
+            ).moveUpOnHover,
           ],
         ),
       ],
