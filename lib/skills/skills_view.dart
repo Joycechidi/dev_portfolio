@@ -5,6 +5,9 @@ import 'package:dev_portfolio/skills/outline_skills_container.dart';
 import 'package:flutter/material.dart';
 
 class SkillsView extends StatelessWidget {
+  const SkillsView({
+    Key key,
+  }) : super(key: key);
   static const title = 'Skills';
   @override
   Widget build(BuildContext context) {

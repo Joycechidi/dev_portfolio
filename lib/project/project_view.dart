@@ -80,6 +80,9 @@ final kProjectItems = [
 ];
 
 class ProjectView extends StatelessWidget {
+  const ProjectView({
+    Key key,
+  }) : super(key: key);
   static const title = 'Projects';
   @override
   Widget build(BuildContext context) {
@@ -125,4 +128,3 @@ class ProjectMobileView extends StatelessWidget {
     );
   }
 }
-

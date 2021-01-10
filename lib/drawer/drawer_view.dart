@@ -1,5 +1,4 @@
 import 'package:dev_portfolio/components/mobile_desktop_view_builder.dart';
-import 'package:dev_portfolio/navigation_bar/nav_bar_view.dart';
 import 'package:dev_portfolio/project/project_desktop_view.dart';
 import 'package:flutter/material.dart';
 
@@ -40,7 +39,7 @@ class DrawerDesktopView extends StatelessWidget {
               ),
             ),
           ),
-          for (var item in kNavigationItems)
+          for (var item in [])
             ListTile(
               title: Text(item.text),
               onTap: () {

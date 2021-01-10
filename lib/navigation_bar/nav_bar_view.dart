@@ -32,7 +32,7 @@ class NavigationDesktopView extends StatelessWidget {
             height: 600,
           ),
           Spacer(),
-          for (var item in kNavigationItems)
+          for (var item in [])
             NavigationBarItem(
               onPressed: onPressed,
               text: item.text,
@@ -72,19 +72,6 @@ class NavigationMobileView extends StatelessWidget {
   }
 }
 
-class NavigationItem {
-  final String text;
-
-  NavigationItem(this.text);
-}
-
-final kNavigationItems = [
-  NavigationItem('About Me '),
-  NavigationItem('Skills '),
-  NavigationItem('Projects '),
-  NavigationItem('Experience '),
-  NavigationItem('Blog '),
-];
 
 class NavigationBarItem extends StatelessWidget {
   const NavigationBarItem({
