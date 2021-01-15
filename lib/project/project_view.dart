@@ -3,18 +3,22 @@ import 'package:dev_portfolio/components/mobile_desktop_view_builder.dart';
 import 'package:dev_portfolio/components/mobile_view_builder.dart';
 import 'package:dev_portfolio/project/project_item_body.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProjectItem {
   final String image;
   final String title;
+  // final String url;
   final String description;
   final List<String> technologies;
 
   ProjectItem({
     @required this.image,
     @required this.title,
+    // @required this.url,
     @required this.description,
     @required this.technologies,
+    // Future<bool> Function() onTap,
   });
 }
 
@@ -28,6 +32,7 @@ final kProjectItems = [
       'Flutter ',
       'Dart ',
     ],
+    // onTap: () => launch('https://github.com/Joycechidi/bmi_calculator'),
   ),
   ProjectItem(
     image: 'images/know_canada.png',
@@ -38,14 +43,8 @@ final kProjectItems = [
       'Flutter ',
       'Dart ',
     ],
+    // onTap: () => launch('https://github.com/Joycechidi/know_canada'),
   ),
-  // ProjectItem(
-  //   image: 'images/recom_sys.png',
-  //   title: "Recommendation System for IBM Watson users.",
-  //   description:
-  //       "This project focuses on creating a recommendation system for users of IBM Watson. Data science and AI articles/posts are recommended to users based on user-user collaborative filtering,rank-based recommendation and matrix factorization.",
-  //   technologies: ['Python ', 'Numpy ', 'Pandas ', 'Matplolib '],
-  // ),
   ProjectItem(
     image: 'images/churn_rate.png',
     title: "Predicting Customer Churn using Pyspark on IBM Cloud",
@@ -55,6 +54,8 @@ final kProjectItems = [
       'Pyspark ',
       'SQL ',
     ],
+    // onTap: () => launch(
+    // 'https://github.com/Joycechidi/Data-Science-Portfolio/tree/master/Predicting%20Customer%20Churn%20with%20Spark'),
   ),
   ProjectItem(
     image: 'images/recom_sys.png',
@@ -65,6 +66,8 @@ final kProjectItems = [
       'Python ',
       'Pandas ',
     ],
+    // onTap: () => launch(
+    // 'https://github.com/Joycechidi/Data-Science-Portfolio/tree/master/Recommendation-Systems-With-IBM-Watson'),
   ),
   ProjectItem(
     image: 'images/sage_maker.png',
@@ -76,6 +79,8 @@ final kProjectItems = [
       'AWS ',
       'S3 ',
     ],
+    // onTap: () => launch(
+    // 'https://github.com/Joycechidi/Deep-Learning-Portfolio/tree/master/Deploying-Models-Using-AWS-SageMaker'),
   ),
 ];
 
@@ -108,6 +113,7 @@ class ProjectDesktopView extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ProjectItemBody(item: item),
+                  // onTap: () => launch(),
                 ),
               )
           ],

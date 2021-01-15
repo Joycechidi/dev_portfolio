@@ -5,7 +5,7 @@ import 'package:dev_portfolio/experience/experience_view.dart';
 import 'package:dev_portfolio/footer/footer.dart';
 import 'package:dev_portfolio/header/header_view.dart';
 import 'package:dev_portfolio/navigation_bar/nav_bar_view.dart';
-import 'package:dev_portfolio/portfolio/bact_to_top_button.dart';
+import 'package:dev_portfolio/portfolio/back_to_top_button.dart';
 import 'package:dev_portfolio/project/project_view.dart';
 import 'package:dev_portfolio/skills/skills_view.dart';
 import 'package:flutter/material.dart';
@@ -65,8 +65,8 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
               children: [
                 NavigationBarView(),
                 HeaderView(),
-                ProjectView(key: projectKey),
                 SkillsView(key: skillsKey),
+                ProjectView(key: projectKey),
                 ExperienceView(key: experienceKey),
                 BlogView(key: blogKey),
                 FooterView(),

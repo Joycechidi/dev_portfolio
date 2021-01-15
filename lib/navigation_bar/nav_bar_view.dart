@@ -1,45 +1,51 @@
 import 'package:dev_portfolio/components/mobile_desktop_view_builder.dart';
+import 'package:dev_portfolio/constants.dart';
+import 'package:dev_portfolio/portfolio/provider_view.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class NavigationBarView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final onPressed = () => print('Click');
     return MobileDesktopViewBuilder(
         mobileView: NavigationMobileView(),
-        desktopView: NavigationDesktopView(onPressed: onPressed));
+        desktopView: NavigationDesktopView());
   }
 }
 
 class NavigationDesktopView extends StatelessWidget {
   const NavigationDesktopView({
     Key key,
-    @required this.onPressed,
   }) : super(key: key);
-
-  final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
+    final navigationItems = context.watch<List<NavigationItem>>();
+    final scrollController = context.watch<ScrollController>();
     return Container(
       height: 100,
       width: 1507,
-      padding: const EdgeInsets.symmetric(horizontal: 30),
+      padding: kScreenPadding,
       child: Row(
         children: [
           Image.asset(
             'images/logo.png',
-            height: 600,
+            height: 100,
           ),
           Spacer(),
-          for (var item in [])
+          for (var item in navigationItems)
             NavigationBarItem(
-              onPressed: onPressed,
+              onPressed: () {
+                scrollController.animateTo(
+                  item.position,
+                  duration: Duration(milliseconds: 700),
+                  curve: Curves.easeInOut,
+                );
+              },
               text: item.text,
             ),
         ],
       ),
-      // color: Colors.deepPurple,
     );
   }
 }
@@ -52,7 +58,7 @@ class NavigationMobileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: 60,
       width: double.infinity,
       child: Row(
         children: [
@@ -63,7 +69,10 @@ class NavigationMobileView extends StatelessWidget {
           ),
           Spacer(),
           IconButton(
-            icon: Icon(Icons.menu),
+            icon: Icon(
+              Icons.menu,
+              color: Colors.teal,
+            ),
             onPressed: () => Scaffold.of(context).openEndDrawer(),
           )
         ],
@@ -71,7 +80,6 @@ class NavigationMobileView extends StatelessWidget {
     );
   }
 }
-
 
 class NavigationBarItem extends StatelessWidget {
   const NavigationBarItem({
@@ -86,20 +94,18 @@ class NavigationBarItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isSmall = MediaQuery.of(context).size.width < 650;
-    // final isLarge = MediaQuery.of(context).size.width > 900;
     return Container(
       padding: const EdgeInsets.only(left: 64),
       child: InkWell(
         mouseCursor: MaterialStateMouseCursor.clickable,
+        highlightColor: Colors.transparent,
         hoverColor: Colors.transparent,
         splashColor: Colors.transparent,
-        highlightColor: Colors.transparent,
         onTap: onPressed,
         child: Text(
           text,
           style: TextStyle(
             fontSize: isSmall ? 17 : 24,
-            color: Colors.black,
           ),
         ),
       ),

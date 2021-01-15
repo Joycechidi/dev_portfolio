@@ -14,7 +14,6 @@ class HeaderView extends StatelessWidget {
       mobileView: HeaderMobileView(),
       desktopView: HeaderDesktopView(),
     );
-
   }
 }
 
@@ -42,7 +41,7 @@ class HeaderDesktopView extends StatelessWidget {
             Image.asset(
               'images/header.png',
               height: isSmall ? imageWidth : 500,
-            )
+            ),
           ],
         ),
       ),
@@ -60,7 +59,7 @@ class HeaderMobileView extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Container(
-      height: height * 0.9,
+      height: height * 0.85,
       width: width,
       color: Color(0xFF180723),
       padding: EdgeInsets.symmetric(
@@ -74,6 +73,7 @@ class HeaderMobileView extends StatelessWidget {
               'images/header.png',
             ),
           ),
+
           HeaderBody(isMobile: true),
         ],
       ),

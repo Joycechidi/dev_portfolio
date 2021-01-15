@@ -15,6 +15,7 @@ class ProjectItemBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        
         Image.asset(item.image),
         Text(item.title, style: Theme.of(context).textTheme.headline4),
         SizedBox(

@@ -50,7 +50,8 @@ class BlogCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              color: Colors.purpleAccent,
+              // color: Colors.purpleAccent,
+              color: Color(0xFF180723),
               width: double.infinity,
               padding: EdgeInsets.symmetric(
                 horizontal: 8,

@@ -1,7 +1,9 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dev_portfolio/components/mobile_desktop_view_builder.dart';
 import 'package:dev_portfolio/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:dev_portfolio/utils/hover_extensions.dart';
 
@@ -20,29 +22,37 @@ class FooterDesktopView extends StatelessWidget {
   Widget build(BuildContext context) {
     final currentYear = DateTime.now().year;
     return Container(
-      height: 100,
+      height: 80,
       width: kInitWidth,
       padding: kScreenPadding,
       child: Row(
         children: [
-          Text('© <Joyce Chidiadi> $currentYear -- '),
+          AutoSizeText(
+            '© $currentYear Designed by Joyce Chidiadi with Dart 💕 Flutter ',
+            style: GoogleFonts.montserrat(
+              fontSize: 24,
+              color: Colors.teal[300],
+            ),
+            maxLines: 2,
+          ),
+          SizedBox(height: 15),
           InkWell(
             child: Text(
-              'See the source code',
-              style: TextStyle(decoration: TextDecoration.underline),
+              ' <View Source Code>',
+              style: TextStyle(decoration: TextDecoration.underline, color: Colors.black, fontSize: 18),
             ),
             mouseCursor: MaterialStateMouseCursor.clickable,
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
             hoverColor: Colors.transparent,
-            onTap: () => launch('https://github.com/Joycechidi'),
+            onTap: () => launch('https://github.com/Joycechidi/dev_portfolio'),
           ),
           Spacer(),
           for (final social in socials)
             IconButton(
               icon: social.icon,
               onPressed: () => launch(social.url),
-              color: Colors.redAccent,
+              color: Colors.teal,
               splashColor: Colors.transparent,
               highlightColor: Colors.transparent,
               hoverColor: Colors.transparent,
@@ -72,26 +82,34 @@ class FooterMobileView extends StatelessWidget {
                 IconButton(
                   icon: social.icon,
                   onPressed: () => launch(social.url),
-                  color: Colors.redAccent,
+                  color: Colors.teal,
                   splashColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   hoverColor: Colors.transparent,
                 )
             ],
           ),
-          SizedBox(height: 20),
-          Text('© <Joyce Chidiadi> $currentYear'),
-          SizedBox(height: 20),
+          SizedBox(height: 10),
+          AutoSizeText(
+            'Built by Joyce Chidiadi with Dart 💕 Flutter © $currentYear ',
+            style: GoogleFonts.montserrat(
+              fontSize: 24,
+              color: Colors.teal[300],
+            ),
+            maxLines: 2,
+          ),
+        
+          SizedBox(height: 15),
           InkWell(
             child: Text(
-              'See the source code',
+              '  Source Code',
               style: TextStyle(decoration: TextDecoration.underline),
             ),
             mouseCursor: MaterialStateMouseCursor.clickable,
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
             hoverColor: Colors.transparent,
-            onTap: () => launch('https://github.com/Joycechidi'),
+            onTap: () => launch('https://github.com/Joycechidi/dev_portfolio'),
           ),
         ],
       ),
