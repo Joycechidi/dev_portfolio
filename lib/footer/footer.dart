@@ -22,24 +22,27 @@ class FooterDesktopView extends StatelessWidget {
   Widget build(BuildContext context) {
     final currentYear = DateTime.now().year;
     return Container(
-      height: 80,
+      height: 100,
       width: kInitWidth,
       padding: kScreenPadding,
       child: Row(
         children: [
           AutoSizeText(
-            '© $currentYear Designed by Joyce Chidiadi with Dart 💕 Flutter ',
+            '© $currentYear Made by Joyce Chidiadi with Dart 💕 Flutter ',
             style: GoogleFonts.montserrat(
-              fontSize: 24,
+              fontSize: 18,
               color: Colors.teal[300],
             ),
             maxLines: 2,
           ),
-          SizedBox(height: 15),
+          SizedBox(height: 20),
           InkWell(
             child: Text(
-              ' <View Source Code>',
-              style: TextStyle(decoration: TextDecoration.underline, color: Colors.black, fontSize: 18),
+              ' <Source Code>',
+              style: TextStyle(
+                  decoration: TextDecoration.underline,
+                  color: Colors.black38,
+                  fontSize: 18),
             ),
             mouseCursor: MaterialStateMouseCursor.clickable,
             splashColor: Colors.transparent,
@@ -89,20 +92,23 @@ class FooterMobileView extends StatelessWidget {
                 )
             ],
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 20),
+          // Text(
+          //   '© $currentYear Built by Joyce Chidiadi with Dart 💕 Flutter ',
+
+          // ),
           AutoSizeText(
-            'Built by Joyce Chidiadi with Dart 💕 Flutter © $currentYear ',
+            '© $currentYear Built by Joyce Chidiadi with Dart 💕 Flutter ',
             style: GoogleFonts.montserrat(
-              fontSize: 24,
+              fontSize: 18,
               color: Colors.teal[300],
             ),
             maxLines: 2,
           ),
-        
-          SizedBox(height: 15),
+          SizedBox(height: 20),
           InkWell(
             child: Text(
-              '  Source Code',
+              '<Source Code>',
               style: TextStyle(decoration: TextDecoration.underline),
             ),
             mouseCursor: MaterialStateMouseCursor.clickable,
@@ -143,4 +149,7 @@ final socials = [
     icon: FaIcon(FontAwesomeIcons.twitter),
     url: 'https://twitter.com/favoredjay',
   ),
+  SocialInfo(
+      icon: FaIcon(FontAwesomeIcons.medium),
+      url: 'https://medium.com/@jcchidiadi'),
 ];

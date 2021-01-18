@@ -3,7 +3,6 @@ import 'package:dev_portfolio/components/mobile_desktop_view_builder.dart';
 import 'package:dev_portfolio/components/mobile_view_builder.dart';
 import 'package:dev_portfolio/project/project_item_body.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ProjectItem {
   final String image;
@@ -118,7 +117,7 @@ class ProjectDesktopView extends StatelessWidget {
               )
           ],
         ),
-        SizedBox(height: 50),
+        SizedBox(height: 30),
       ],
     );
   }

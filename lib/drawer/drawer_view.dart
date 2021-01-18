@@ -25,7 +25,7 @@ class DrawerMobileView extends StatelessWidget {
     final scrollController = context.watch<ScrollController>();
 
     return Drawer(
-      // Add a ListView to the drawer. This ensures the user can scroll
+      // decoration: BoxDecoration(color: Colors.white),      // Add a ListView to the drawer. This ensures the user can scroll
       // through the options in the drawer if there isn't enough vertical
       // space to fit everything.
       child: ListView(
@@ -33,10 +33,10 @@ class DrawerMobileView extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
-            child: Text('Joyce Chidiadi'),
+            child: Text('Joyce Chidiadi', style: Theme.of(context).textTheme.headline4),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [Colors.white, Colors.deepPurple],
+                colors: [Colors.purple, Colors.deepPurple],
                 tileMode: TileMode.repeated,
               ),
             ),

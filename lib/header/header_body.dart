@@ -33,7 +33,7 @@ class HeaderBody extends StatelessWidget {
             style: GoogleFonts.montserrat(
               fontWeight: FontWeight.bold,
               color: Colors.white,
-              fontSize: 60,
+              fontSize: 50,
             ),
             maxLines: 2,
           ),
@@ -72,7 +72,7 @@ class HeaderBody extends StatelessWidget {
               ),
             ),
           ).moveUpOnHover,
-          SizedBox(height: 15),
+          // SizedBox(height: 15),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -87,7 +87,7 @@ class HeaderBody extends StatelessWidget {
                 ).moveUpOnHover,
             ],
           ),
-          SizedBox(height: 30),
+          SizedBox(height: 40),
         ],
       ),
     );
