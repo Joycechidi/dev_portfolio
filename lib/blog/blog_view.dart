@@ -42,8 +42,8 @@ class BlogDesktopView extends StatelessWidget {
       children: [
         Row(
           children: [
-            for (final article in articles)
-              Expanded(child: BlogCard(article: article))
+            // for (final article in articles)
+            Expanded(child: BlogCard())
           ],
         ),
         SizedBox(height: 100),
@@ -60,11 +60,11 @@ class BlogMobileView extends StatelessWidget {
     return MobileViewBuilder(
       titleText: BlogView.title,
       children: [
-        for (final article in articles)
-          BlogCard(
-            article: article,
-            isMobile: true,
-          )
+        // for (final article in articles)
+        BlogCard(
+          // article: article,
+          isMobile: true,
+        )
       ],
     );
   }
