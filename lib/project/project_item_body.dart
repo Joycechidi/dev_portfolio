@@ -1,6 +1,7 @@
 import 'package:dev_portfolio/project/project_view.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProjectItemBody extends StatelessWidget {
   const ProjectItemBody({
@@ -15,9 +16,11 @@ class ProjectItemBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        
-        Image.asset(item.image),
+        GestureDetector(
+          onTap: _launchURL,
+        child: Image.asset(item.image),),
         Text(item.title, style: Theme.of(context).textTheme.headline4),
+        
         SizedBox(
           height: 15,
         ),
@@ -51,3 +54,19 @@ class ProjectItemBody extends StatelessWidget {
     );
   }
 }
+
+// const projectUrls = [
+// 'https://github.com/Joycechidi/bmi_calculator',
+// 'https://github.com/Joycechidi/bmi_calculator',
+// 'https://github.com/Joycechidi/bmi_calculator',
+// 'https://github.com/Joycechidi/bmi_calculator',
+// 'https://github.com/Joycechidi/bmi_calculator'
+// ];
+  _launchURL() async {
+    const url = 'https://github.com/Joycechidi/bmi_calculator';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }

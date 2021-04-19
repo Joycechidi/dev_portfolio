@@ -33,9 +33,9 @@ class FooterDesktopView extends StatelessWidget {
               fontSize: 18,
               color: Colors.teal[300],
             ),
-            maxLines: 2,
+            // maxLines: 1,
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 50),
           InkWell(
             child: Text(
               ' <Source Code>',
@@ -60,7 +60,7 @@ class FooterDesktopView extends StatelessWidget {
               highlightColor: Colors.transparent,
               hoverColor: Colors.transparent,
             ).moveUpOnHover,
-          SizedBox(width: 60),
+          SizedBox(width: 40),
         ],
       ),
     );
@@ -92,7 +92,7 @@ class FooterMobileView extends StatelessWidget {
                 )
             ],
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 15),
           // Text(
           //   '© $currentYear Built by Joyce Chidiadi with Dart 💕 Flutter ',
 
@@ -105,7 +105,7 @@ class FooterMobileView extends StatelessWidget {
             ),
             maxLines: 2,
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 15),
           InkWell(
             child: Text(
               '<Source Code>',

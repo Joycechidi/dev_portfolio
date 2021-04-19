@@ -1,5 +1,6 @@
 import 'package:after_layout/after_layout.dart';
 import 'package:dev_portfolio/blog/blog_view.dart';
+// import 'package:dev_portfolio/blog/blog_view.dart';
 import 'package:dev_portfolio/drawer/drawer_view.dart';
 import 'package:dev_portfolio/experience/experience_view.dart';
 import 'package:dev_portfolio/footer/footer.dart';
@@ -68,7 +69,7 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
                 SkillsView(key: skillsKey),
                 ProjectView(key: projectKey),
                 ExperienceView(key: experienceKey),
-                BlogView(key: blogKey),
+                // BlogView(key: blogKey),
                 FooterView(),
               ],
             ),

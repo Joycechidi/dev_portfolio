@@ -7,14 +7,14 @@ import 'package:flutter/material.dart';
 class ProjectItem {
   final String image;
   final String title;
-  // final String url;
+  final String url;
   final String description;
   final List<String> technologies;
 
   ProjectItem({
     @required this.image,
     @required this.title,
-    // @required this.url,
+    @required this.url,
     @required this.description,
     @required this.technologies,
     // Future<bool> Function() onTap,
@@ -24,6 +24,7 @@ class ProjectItem {
 final kProjectItems = [
   ProjectItem(
     image: 'images/bmi_calc.png',
+    url: 'https://github.com/Joycechidi/bmi_calculator',
     title: "BMI Calculator",
     description:
         "BMI Calculator is a tool made to help you calculate your body mass index is. This index helps you know if your weight is normal, obese or overweight.",
@@ -35,6 +36,7 @@ final kProjectItems = [
   ),
   ProjectItem(
     image: 'images/know_canada.png',
+    url: 'https://github.com/Joycechidi/know_canada',
     title: "Know_Canada",
     description:
         "Know Canada is a quiz app that helps people to prepare for Canadian Citizenship Test and for Canadians to have fun testing how much they know about Canada based on Discover Canada content.",
@@ -45,19 +47,8 @@ final kProjectItems = [
     // onTap: () => launch('https://github.com/Joycechidi/know_canada'),
   ),
   ProjectItem(
-    image: 'images/churn_rate.png',
-    title: "Predicting Customer Churn using Pyspark on IBM Cloud",
-    description:
-        "Spark was used in this predict the customer churn rate for a music app similar to Spotify.",
-    technologies: [
-      'Pyspark ',
-      'SQL ',
-    ],
-    // onTap: () => launch(
-    // 'https://github.com/Joycechidi/Data-Science-Portfolio/tree/master/Predicting%20Customer%20Churn%20with%20Spark'),
-  ),
-  ProjectItem(
     image: 'images/recom_sys.png',
+    url: 'https://github.com/Joycechidi/Data-Science-Portfolio/tree/master/Recommendation-Systems-With-IBM-Watson',
     title: "Recommendation System for IBM Watson Users",
     description:
         "This project focuses on creating article recommendation system for users of IBM Watson based on user-user collaborative filtering,rank-based recommendation and matrix factorization.",
@@ -70,13 +61,13 @@ final kProjectItems = [
   ),
   ProjectItem(
     image: 'images/sage_maker.png',
+    url: 'https://github.com/Joycechidi/Deep-Learning-Portfolio/tree/master/Deploying-Models-Using-AWS-SageMaker',
     title: "Deploying Sentiment Analysis Web App on AWS Sagemaker",
     description:
         "In this project, I used AWS SageMaker to Deploy an LSTM-based Sentiment Analysis of movie review",
     technologies: [
       'PyTorch ',
       'AWS ',
-      'S3 ',
     ],
     // onTap: () => launch(
     // 'https://github.com/Joycechidi/Deep-Learning-Portfolio/tree/master/Deploying-Models-Using-AWS-SageMaker'),
